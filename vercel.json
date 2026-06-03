@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs22.x"
+    }
+  },
+  "routes": [
+    { "src": "/api/_lib/(.*)", "status": 404 },
+    { "handle": "filesystem" },
+    { "src": "/api/load", "dest": "/api/load.js" },
+    { "src": "/api/stats", "dest": "/api/stats.js" },
+    { "src": "/api/save-checkin", "dest": "/api/save-checkin.js" },
+    { "src": "/api/save-exchange", "dest": "/api/save-exchange.js" },
+    { "src": "/api/unlock-medal", "dest": "/api/unlock-medal.js" },
+    { "src": "/api/buy-card", "dest": "/api/buy-card.js" },
+    { "src": "/api/use-card", "dest": "/api/use-card.js" },
+    { "src": "/api/set-wish", "dest": "/api/set-wish.js" },
+    { "src": "/api/(.*)", "status": 404 },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
